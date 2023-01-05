@@ -1,0 +1,12 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#search-bar {
+    width: 20%;
+}
+
+.pl-2 {
+    margin-left: 5px;
+    padding: 5px;
+}
