@@ -20,14 +20,25 @@
 // THEN I am again presented with current and future conditions for that city
 
 
+var button = document.getElementById('searchBtn');
+var input = document.getElementById('inputCity');
+button.addEventListener('click', function () {
+        console.log(input.value);
+})
 
-var button = document.querySelector('.button');
-var input = document.getElementById('inputCity')
+
 var ApiKey = '02de89be83267d4702049938b828e151';
+
+
+
 var cities = [];
 var city = 
 
+
+
+
 fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=' + ApiKey);
+
 
 // function getCoords() {
 //      fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + nameCity + '&limit=5&appid=' + ApiKey);
@@ -41,7 +52,6 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appi
 // }
 
 
-// var lat 
 
 
 // var baseApiUrl = 'https://api.openweathermap.org';
@@ -65,8 +75,8 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appi
 
 
 // Function to display the search history list
-// function searchHistory() {
-//         // Start at end of history array and count down to show the most recent at the top.
+ //function searchHistory() {
+        //Start at end of history array and count down to show the most recent at the top.
 //        }
    
        
