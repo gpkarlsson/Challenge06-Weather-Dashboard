@@ -1,5 +1,14 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#h1wd {
+    background: linear-gradient(45deg, green, purple);
+    color: white;
+    justify-content: center;
 }
 
 #search-bar {
@@ -7,6 +16,15 @@
 }
 
 .pl-2 {
+    position: relative;
     margin-left: 5px;
     padding: 5px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#searchbar {
+    position: relative;
+    left: 10px;
 }
