@@ -1,5 +1,6 @@
 var button = document.querySelector('.button');
 var inputValue = document.querySelector('.inputValue');
+var input = document.getElementById('inputCity')
 // var name = document.querySelector('.name');
 // var desc = document.querySelector('.desc');
 // var temp = document.querySelector('.temp');
@@ -9,12 +10,16 @@ var ApiKey = '02de89be83267d4702049938b828e151';
 //fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151')
 fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=' + ApiKey);
 
-function getCoords() {
-    fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + nameCity + '&limit=5&appid=' + ApiKey);
-var nameCity = document.getElementById('inputCity');
-} 
-    
-
+// function getCoords() {
+//     fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + nameCity + '&limit=5&appid=' + ApiKey);
+// var nameCity = document.getElementById('inputCity');
+// } 
+button.addEventListener('click', function(name){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=50a7aa80fa492fa92e874d23ad061374')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => alert("Wrong City Name"))
+})
 
 
 var baseApiUrl = 'https://api.openweathermap.org';
