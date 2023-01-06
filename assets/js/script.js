@@ -22,17 +22,20 @@
 
 var button = document.getElementById('searchBtn');
 var input = document.getElementById('inputCity');
-button.addEventListener('click', function () {
-        console.log(input.value);
+var ApiKey = '02de89be83267d4702049938b828e151';
+var cities = [];
+var city = 
+
+button.addEventListener('click', function saveCity() {
+        e.preventDefault()
+        localStorage.setItem('inputCity', );
 })
 
 
-var ApiKey = '02de89be83267d4702049938b828e151';
 
 
 
-var cities = [];
-var city = 
+
 
 
 
