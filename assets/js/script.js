@@ -24,9 +24,9 @@ var button = document.getElementById('searchBtn');
 var input = document.getElementById('inputCity');
 var ApiKey = '02de89be83267d4702049938b828e151';
 var cities = [];
-var city = 
+var city 
 
-button.addEventListener('click', function saveCity() {
+button.addEventListener('click', function saveCity(e) {
         e.preventDefault()
         localStorage.setItem('inputCity', );
 })
@@ -34,19 +34,13 @@ button.addEventListener('click', function saveCity() {
 
 
 
-
-
-
-
-
-
 fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=' + ApiKey);
 
 
-// function getCoords() {
-//      fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + nameCity + '&limit=5&appid=' + ApiKey);
-//         var nameCity = document.getElementById('inputCity').value;
-//  } 
+ function getCoords() {
+      fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + nameCity + '&limit=5&appid=' + ApiKey);
+         var nameCity = document.getElementById('inputCity').value;
+ } 
 
 // function getWeather() {
 //         if (response.ok) {
