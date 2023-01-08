@@ -50,7 +50,7 @@ console.log(today);
 //          var nameCity = document.getElementById('inputCity').value;
 //  } 
 
-function getWeather() {
+function getWeather(weather) {
 
         var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
 
