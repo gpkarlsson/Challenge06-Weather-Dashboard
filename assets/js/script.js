@@ -50,19 +50,19 @@ console.log(today);
 //          var nameCity = document.getElementById('inputCity').value;
 //  } 
 
-function getWeather(weather) {
+var apicall = fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial');
 
-        var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
+function getWeather() {
 
-        fetch(url)
+        // var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
+
+        fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial')
         .then((response) => response.json())
         .then((data) => getWeather(data));
-        console.log('test1');
          }
 
-function showWeather(weather) {
+function showWeather() {
         console.log('test');
-        console.log(weather);
         var weatherNow = document.getElementById('weatherNow');
 
         //create h2 for name
@@ -90,8 +90,6 @@ function showWeather(weather) {
                 weatherNow.append(description);    
         }
 }
-
-showWeather();
 // var baseApiUrl = 'https://api.openweathermap.org';
 
 // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=02de89be83267d4702049938b828e151
