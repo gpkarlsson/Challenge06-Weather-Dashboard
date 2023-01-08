@@ -22,17 +22,24 @@
 
 var button = document.getElementById('searchBtn');
 var input = document.getElementById('inputCity');
-var ApiKey = '02de89be83267d4702049938b828e151';
-var cities = [];
-var city 
 
+var ApiKey = '02de89be83267d4702049938b828e151';
+
+var cities = ['Madison', 'Chicago', 'Denver', 'Detroit']
+var coords = ['43.07295° N, -89.38669° E', '41.88425° N, -87.63245° E', '39.73715° N, -104.989174° E', '42.331427° N, -83.045754° W']
+
+var today = dayjs().format('dddd, MMMM D, YYYY');
+var dateh3 = document.getElementById('date');
+dateh3.textContent = today;
+var citySearch = [];
+console.log(today);
+todayDate = document.getElementById('')
+
+var local = document.getElementById('')
 button.addEventListener('click', function saveCity(e) {
         e.preventDefault()
         localStorage.setItem('inputCity', );
 })
-
-
-
 
 fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=' + ApiKey);
 

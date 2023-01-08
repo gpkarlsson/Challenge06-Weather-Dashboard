@@ -9,6 +9,8 @@
     background: linear-gradient(45deg, green, purple);
     color: white;
     justify-content: center;
+    align-items: center;
+    left: 100px;
 }
 
 #search-bar {
