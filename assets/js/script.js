@@ -23,41 +23,75 @@
 var button = document.getElementById('searchBtn');
 var input = document.getElementById('inputCity');
 
-var ApiKey = '02de89be83267d4702049938b828e151';
+const ApiKey = '02de89be83267d4702049938b828e151';
 
-var cities = ['Madison', 'Chicago', 'Denver', 'Detroit']
-var coords = ['43.07295° N, -89.38669° E', '41.88425° N, -87.63245° E', '39.73715° N, -104.989174° E', '42.331427° N, -83.045754° W']
+//var cities = ['Madison', 'Chicago', 'Denver', 'Detroit']
+//var coords = ['43.07295° N, -89.38669° E', '41.88425° N, -87.63245° E', '39.73715° N, -104.989174° E', '42.331427° N, -83.045754° W']
+//cities[0] = coords[0];
 
 var today = dayjs().format('dddd, MMMM D, YYYY');
 var dateh3 = document.getElementById('date');
 dateh3.textContent = today;
 var citySearch = [];
 console.log(today);
-todayDate = document.getElementById('')
+//todayDate = document.getElementById('')
 
-var local = document.getElementById('')
-button.addEventListener('click', function saveCity(e) {
-        e.preventDefault()
-        localStorage.setItem('inputCity', );
-})
+//var local = document.getElementById('')
+// button.addEventListener('click', function saveCity(e) {
+//         e.preventDefault()
+//         localStorage.setItem('inputCity', );
+// })
 
-fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=' + ApiKey);
-
-
- function getCoords() {
-      fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + nameCity + '&limit=5&appid=' + ApiKey);
-         var nameCity = document.getElementById('inputCity').value;
- } 
-
-// function getWeather() {
-//         if (response.ok) {
-//                 fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=' + ApiKey);
-//         }
-// }
+//fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=' + ApiKey + '&units=imperial');
 
 
+//  function getCoords() {
+//       fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + nameCity + '&limit=5&appid=' + ApiKey);
+//          var nameCity = document.getElementById('inputCity').value;
+//  } 
 
+function getWeather() {
 
+        var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
+
+        fetch(url)
+        .then((response) => response.json())
+        .then((data) => getWeather(data));
+        console.log('test1');
+         }
+
+function showWeather(weather) {
+        console.log('test');
+        console.log(weather);
+        var weatherNow = document.getElementById('weatherNow');
+
+        //create h2 for name
+        var city = document.createElement('h2');
+        city.textContent = weather.name;
+        weatherNow.append(city);
+
+        //create p for humidity,wind, description, temp
+        var temp = document.createElement('p');
+        temp.textContent = 'Temp: ' + weather.main.temp + ' F'
+        weatherNow.append(temp);
+        
+        var humidity = document.createElement('p');
+        humidity.textContent = "Humidity: " + weather.main.humidity + '%';
+        weatherNow.append(humidity);
+
+        var wind = document.createElement('p');
+        wind.textContent = "Wind speed: " + weather.wind.speed + ' mph, ' + weather.wind.deg + '°';
+        weatherNow.append(wind);
+         
+        var weatherDetails = weather.weather[0]
+        if (weatherDetails && weatherDetails.description) {
+                var description = document.createElement('p');
+                description.textContent = weatherDetails.description;
+                weatherNow.append(description);    
+        }
+}
+
+showWeather();
 // var baseApiUrl = 'https://api.openweathermap.org';
 
 // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=02de89be83267d4702049938b828e151
