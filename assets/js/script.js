@@ -53,13 +53,13 @@ console.log(today);
 var apicall = fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial');
 
 function getWeather() {
-
         // var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
-
         fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial')
         .then((response) => response.json())
-        .then((data) => getWeather(data));
+        .then((data) => console.log(data));
          }
+
+getWeather();
 
 function showWeather() {
         console.log('test');
