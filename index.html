@@ -42,40 +42,41 @@
       <div id="currWeather" class="col-12 currentWeather p-0 justify-content-start">
         <div class="d-flex nameCity">
           <h2 id="city"></h2>
-          <h3 id="date"></h3>
+          <h3 id="date" style="position: relative; left: 20px"></h3>
           <img id="weather-icon" />
         </div>
         <p class="pt-1 pl-2">Temperature: <span id="temperature"></span> &deg;F</p>
         <p class="pl-2">Humidity: <span id="humidity"></span>% </p>
         <p class="pl-2">Wind Speed: <span id="wind"></span> MPH</p>
-        <p class="pl-2">UV Index: <span id="uv-index" class="p-1"></span></p>
+        <div id="imgToday"></div>
+        <!-- <p class="pl-2">UV Index: <span id="uv-index" class="p-1"></span></p> -->
       </div>
 
       <!-- 5 Day forecast -->
 
       <div class="col-12 fiveDay">
-        <h2>5 Day Forecast</h2>
+        <h2 id="fiveday">5 Day Forecast</h2>
         <div class="row">
           <div class="col-sm-10 col-md-4 offset-lg-1 col-lg-2 p-1">
             <div class="card day-0 m-0 text-center">
               <div class="card-body p-1">
                 <p class="card-title">Day 1</p>
-                <img class="fiveDay-img mb-2" />
-                <p class="card-subtitle mb-2 text-muted">Temp: <span class="fiveDay-temp"></span>
+                <div id="imgDay1"></div>
+                <p class="card-subtitle mb-2 text-muted" >Temp: <span class="fiveDay-temp" id="tempday1"></span>
                   &deg;F</p>
-                <p class="card-subtitle mb-2 text-muted">Humidity: <span class="fiveDay-humid"></span>%</p>
+                <p class="card-subtitle mb-2 text-muted">Humidity: <span class="fiveDay-humid" id="humidday1"></span>%</p>
               </div>
             </div>
           </div>
 
           <div class="col-sm-10 col-md-4 col-lg-2 p-1 text-center">
             <div class="card day-1 m-0">
-              <div class="card-body p-1">
+              <div id="cardDay1" class="card-body p-1">
                 <p class="card-title">Day 2</p>
-                <img class="fiveDay-img mb-2" />
-                <p class="card-subtitle mb-2 text-muted">Temp: <span class="fiveDay-temp"></span>
+                <div id="imgDay2"></div>
+                <p class="card-subtitle mb-2 text-muted">Temp: <span class="fiveDay-temp" id="tempday2"></span>
                   &deg;F</p>
-                <p class="card-subtitle mb-2 text-muted">Humidity: <span class="fiveDay-humid"></span>%</p>
+                <p class="card-subtitle mb-2 text-muted">Humidity: <span class="fiveDay-humid" id="humidday2"></span>%</p>
               </div>
             </div>
           </div>
@@ -84,10 +85,10 @@
             <div class="card day-2 m-0">
               <div class="card-body p-1">
                 <p class="card-title">Day 3</p>
-                <img class="fiveDay-img mb-2" />
-                <p class="card-subtitle mb-2 text-muted">Temp: <span class="fiveDay-temp"></span>
+                <div id="imgDay3"></div>
+                <p class="card-subtitle mb-2 text-muted">Temp: <span class="fiveDay-temp" id="tempday3"></span>
                   &deg;F</p>
-                <p class="card-subtitle mb-2 text-muted">Humidity: <span class="fiveDay-humid"></span>%</p>
+                <p class="card-subtitle mb-2 text-muted">Humidity: <span class="fiveDay-humid" id="humidday3"></span>%</p>
               </div>
             </div>
           </div>
@@ -96,10 +97,10 @@
             <div class="card day-3 m-0">
               <div class="card-body p-1">
                 <p class="card-title">Day 4</p>
-                <img class="fiveDay-img mb-2" />
-                <p class="card-subtitle mb-2 text-muted">Temp: <span class="fiveDay-temp"></span>
+                <div id="imgDay4"></div>
+                <p class="card-subtitle mb-2 text-muted">Temp: <span class="fiveDay-temp" id="tempday4"></span>
                   &deg;F</p>
-                <p class="card-subtitle mb-2 text-muted">Humidity: <span class="fiveDay-humid"></span>%</p>
+                <p class="card-subtitle mb-2 text-muted">Humidity: <span class="fiveDay-humid" id="humidday4"></span>%</p>
               </div>
             </div>
           </div>
@@ -108,10 +109,10 @@
               <div class="card-body p-1">
 
                 <p class="card-title">Day 5</p>
-                <img class="fiveDay-img mb-2" />
+                <div id="imgDay5"></div>
                 <p class="card-subtitle mb-2 text-muted">
-                  Temp: <span class="fiveDay-temp"></span> &deg;F</p>
-                <p class="card-subtitle mb-2 text-muted">Humidity: <span class="fiveDay-humid"></span>%</p>
+                  Temp: <span class="fiveDay-temp" id="tempday5" image.png image.pngimage.pngimage.png></span> &deg;F</p>
+                <p class="card-subtitle mb-2 text-muted">Humidity: <span class="fiveDay-humid" id="humidday5" ></span>%</p>
               </div>
             </div>
           </div>
@@ -119,6 +120,7 @@
       </div>
     </div>
   </div>
+  <div id="dumper"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"
     integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg=="
     crossorigin="anonymous"></script>

@@ -53,13 +53,110 @@ console.log(today);
 var apicall = fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial');
 
 function getWeather() {
+        //var dumper = document.getElementById('dumper');
+        var temp = document.getElementById('temperature');
+        var humid = document.getElementById('humidity');
+        var wind = document.getElementById('wind')
+        //var uV = document.getElementById('uv-index');
         // var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
         fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial')
-        .then((response) => response.json())
-        .then((data) => console.log(data));
-         }
+        .then((response) => { 
+                return response.json();
+        })
+        .then((data) => {
+                temp.textContent = JSON.stringify(data.list[0].main.temp)
+                humid.textContent = JSON.stringify(data.list[0].main.humidity)
+                wind.textContent = JSON.stringify(data.list[0].wind.speed)
+                imgToday.innerHTML = '<img id="imgToday" class="fiveDay-img mb-2" src="https://openweathermap.org/img/wn/' + data.list[0].weather[0].icon + '@4x.png" />'
 
+                
+        })};
+        
+
+        function getForecastDay1() {
+                var tempday1 = document.getElementById('tempday1');
+                var humidday1 = document.getElementById('humidday1');
+                var imgDay1 = document.getElementById('imgDay1');
+                // var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
+                fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial')
+                .then((response) => { 
+                        return response.json();
+                })
+                .then((data) => {
+                        console.log(data)
+                        tempday1.textContent = JSON.stringify(data.list[8].main.temp)
+                        humidday1.textContent = JSON.stringify(data.list[8].main.humidity)
+                        imgDay1.innerHTML = '<img id="imgDay1" class="fiveDay-img mb-2" src="https://openweathermap.org/img/wn/' + data.list[8].weather[0].icon + '@2x.png" />'
+                })};
+        
+
+        
+        function getForecastDay2() {
+                var tempday2 = document.getElementById('tempday2');
+                var humidday2 = document.getElementById('humidday2');
+                // var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
+                fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial')
+                .then((response) => { 
+                        return response.json();
+                })
+                .then((data) => {
+                        tempday2.textContent = JSON.stringify(data.list[16].main.temp)
+                        humidday2.textContent = JSON.stringify(data.list[16].main.humidity)
+                        imgDay2.innerHTML = '<img id="imgDay2" class="fiveDay-img mb-2" src="https://openweathermap.org/img/wn/' + data.list[16].weather[0].icon + '@2x.png" />'
+                })};
+
+                
+        function getForecastDay3() {
+                var tempday3 = document.getElementById('tempday3');
+                var humidday3 = document.getElementById('humidday3');
+                // var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
+                fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial')
+                .then((response) => { 
+                        return response.json();
+                })
+                .then((data) => {
+                        tempday3.textContent = JSON.stringify(data.list[24].main.temp)
+                        humidday3.textContent = JSON.stringify(data.list[24].main.humidity)
+                        imgDay3.innerHTML = '<img id="imgDay3" class="fiveDay-img mb-2" src="https://openweathermap.org/img/wn/' + data.list[24].weather[0].icon + '@2x.png" />'
+                })};
+        
+         function getForecastDay4() {
+                        var tempday4 = document.getElementById('tempday4');
+                        var humidday4 = document.getElementById('humidday4');
+                        // var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
+                        fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial')
+                        .then((response) => { 
+                                return response.json();
+                        })
+                        .then((data) => {
+                                tempday4.textContent = JSON.stringify(data.list[32].main.temp)
+                                humidday4.textContent = JSON.stringify(data.list[32].main.humidity)
+                                imgDay4.innerHTML = '<img id="imgDay4" class="fiveDay-img mb-2" src="https://openweathermap.org/img/wn/' + data.list[16].weather[0].icon + '@2x.png" />'
+
+                        })};
+
+        function getForecastDay5() {
+                var tempday5 = document.getElementById('tempday5');
+                var humidday5 = document.getElementById('humidday5');
+                
+                // var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial';
+                fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial')
+                .then((response) => { 
+                        return response.json();
+                })
+                .then((data) => {
+                        tempday5.textContent = JSON.stringify(data.list[39].main.temp)
+                        humidday5.textContent = JSON.stringify(data.list[39].main.humidity)
+                        imgDay5.innerHTML = '<img id="imgDay5" class="fiveDay-img mb-2" src="https://openweathermap.org/img/wn/' + data.list[16].weather[0].icon + '@2x.png" />'
+                        
+                })};                
 getWeather();
+getForecastDay1();
+getForecastDay2();
+getForecastDay3();
+getForecastDay4();
+getForecastDay5();
+
 
 function showWeather() {
         console.log('test');
@@ -72,7 +169,7 @@ function showWeather() {
 
         //create p for humidity,wind, description, temp
         var temp = document.createElement('p');
-        temp.textContent = 'Temp: ' + weather.main.temp + ' F'
+        temp.textContent = 'Temp: ' + response.main.temp + ' F'
         weatherNow.append(temp);
         
         var humidity = document.createElement('p');
@@ -82,13 +179,6 @@ function showWeather() {
         var wind = document.createElement('p');
         wind.textContent = "Wind speed: " + weather.wind.speed + ' mph, ' + weather.wind.deg + '°';
         weatherNow.append(wind);
-         
-        var weatherDetails = weather.weather[0]
-        if (weatherDetails && weatherDetails.description) {
-                var description = document.createElement('p');
-                description.textContent = weatherDetails.description;
-                weatherNow.append(description);    
-        }
 }
 // var baseApiUrl = 'https://api.openweathermap.org';
 
