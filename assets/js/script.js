@@ -19,9 +19,9 @@
 // WHEN I click on a city in the search history
 // THEN I am again presented with current and future conditions for that city
 
-
+var searchInputVal = document.querySelector('#inputCity')
 var button = document.getElementById('searchBtn');
-var input = document.getElementById('inputCity');
+//var input = document.getElementById('inputCity');
 
 const ApiKey = '02de89be83267d4702049938b828e151';
 
@@ -36,6 +36,24 @@ var citySearch = [];
 console.log(today);
 //todayDate = document.getElementById('')
 
+
+
+
+
+// function handleSearchFormSubmit(e) {
+//         // Don't continue if there is nothing in the search form
+//         if (!searchInputVal.value) {
+//           return;
+//         }
+      
+//         e.preventDefault();
+//         var search = searchInputVal.value.trim();
+//         getCoords(search);
+//         searchInputVal.value = '';
+//       }
+      
+
+
 //var local = document.getElementById('')
 // button.addEventListener('click', function saveCity(e) {
 //         e.preventDefault()
@@ -49,7 +67,57 @@ console.log(today);
 //       fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + nameCity + '&limit=5&appid=' + ApiKey);
 //          var nameCity = document.getElementById('inputCity').value;
 //  } 
+//var LatCoord =
+function geoLat(){
+        var latdiv = document.getElementById('lat')
+        //var londiv = document.getElementById('lon')
 
+        fetch('http://api.openweathermap.org/geo/1.0/direct?q=Madison,WI,USA&limit=5&appid=' + ApiKey)
+        .then((response) => response.json())
+        .then((data) => latdiv.textContent = JSON.stringify(data[0].lat));
+};
+
+//var LonCoord =
+function geoLon(){
+        var londiv = document.getElementById('lon')
+
+        fetch('http://api.openweathermap.org/geo/1.0/direct?q=Madison,WI,USA&limit=5&appid=' + ApiKey)
+        .then((response) => response.json())
+        .then((data) => londiv.textContent = JSON.stringify(data[0].lon));
+};
+geoLat();
+geoLon();
+
+var searchBarEl = document.querySelector('#inputCity');
+
+
+function handleCitySearch() {
+        //e.preventDefault();
+        var search = searchInputVal.value.trim();
+        searchInputVal.value = ''
+//var search = searchInputVal;
+//console.log(search);
+getCoords(search);
+}
+
+var searchBtn = document.getElementById('searchBtn');
+
+searchBtn.addEventListener('click', handleCitySearch());
+
+var cityHistory = [];
+
+
+function getCoords() {;
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=` + ApiKey)
+        .then((response) => response.json())
+        //.then((data) => console.log(data))
+        // .then(console.log(data[0].lat))
+        // .then(console.log(data[0].lon))
+        //.then((dumper.textContent = data[0]))
+}
+
+
+//getCoords()
 var apicall = fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=02de89be83267d4702049938b828e151&units=imperial');
 
 function getWeather() {

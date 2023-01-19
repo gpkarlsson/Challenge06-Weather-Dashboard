@@ -45,10 +45,12 @@
           <h3 id="date" style="position: relative; left: 20px"></h3>
           <img id="weather-icon" />
         </div>
-        <p class="pt-1 pl-2">Temperature: <span id="temperature"></span> &deg;F</p>
-        <p class="pl-2">Humidity: <span id="humidity"></span>% </p>
-        <p class="pl-2">Wind Speed: <span id="wind"></span> MPH</p>
-        <div id="imgToday"></div>
+        <div id="weatherBoxNow">
+          <div id="imgToday"></div>
+          <p class="pt-1 pl-2">Temperature: <span id="temperature"></span> &deg;F</p>
+          <p class="pl-2">Humidity: <span id="humidity"></span>% </p>
+          <p class="pl-2">Wind Speed: <span id="wind"></span> MPH</p>
+      </div>
         <!-- <p class="pl-2">UV Index: <span id="uv-index" class="p-1"></span></p> -->
       </div>
 
@@ -121,6 +123,8 @@
     </div>
   </div>
   <div id="dumper"></div>
+  <div id="lat"></div>
+  <div id="lon"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"
     integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg=="
     crossorigin="anonymous"></script>

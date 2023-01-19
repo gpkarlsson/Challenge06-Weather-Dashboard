@@ -45,3 +45,8 @@
     display: flex;
     justify-content: center;
 }
+
+#weatherBoxNow {
+    border: 1px grey;
+    border-radius: 10px;
+}
