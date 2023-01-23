@@ -38,10 +38,8 @@ console.log(today);
 
 
 
-
-
 // function handleSearchFormSubmit(e) {
-//         // Don't continue if there is nothing in the search form
+//         Don't continue if there is nothing in the search form
 //         if (!searchInputVal.value) {
 //           return;
 //         }
@@ -59,8 +57,8 @@ console.log(today);
 //         if (city) {
 //           var search = searchInputVal.value.trim();
 //           searchInputVal.value = "";
-//           //var search = searchInputVal;
-//           //console.log(search);
+//           var search = searchInputVal;
+//           console.log(search);
 //           fetch(
 //             "http://api.openweathermap.org/geo/1.0/direct?q=" +
 //               search +
@@ -90,9 +88,9 @@ console.log(today);
                           
 //                               })
 //           searchBarEl.value = "";
-//         // } else {
-//         //   alert("Please enter a city")
-//         // }
+//          } else {
+//            alert("Please enter a city")
+//          }
         
 // });
 searchBtn.addEventListener("click", function (e) {
@@ -176,11 +174,11 @@ function geoLon(){
 
 
 // function handleCitySearch() {
-//         //e.preventDefault();
+//         e.preventDefault();
 //         var search = searchBarEl.value.trim();
 //         search.value = ''
-// //var search = searchInputVal;
-// //console.log(search);
+// var search = searchInputVal;
+// console.log(search);
 // getCoords(search);
 // }
 
@@ -195,9 +193,9 @@ function geoLon(){
 //         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=` + ApiKey)
 //         .then((response) => response.json())
 //         .then((data) => console.log(data))
-//          .then(console.log(data[0].lat))
-//         // .then(console.log(data[0].lon))
-//         //.then((dumper.textContent = data[0]))
+//         .then(console.log(data[0].lat))
+//         .then(console.log(data[0].lon))
+//         .then((dumper.textContent = data[0]))
 // }
 
 //getCoords();
@@ -360,7 +358,7 @@ function showWeather() {
        
 
        
-// // Function to update history in local storage then updates displayed history.
+// Function to update history in local storage then updates displayed history.
 // function appendSearch() {
        
 // }
@@ -370,9 +368,9 @@ function showWeather() {
 // }
 
 
-// // Function to display the current weather data fetched from OpenWeather api.
+// Function to display the current weather data fetched from OpenWeather api.
 // function getCurrWeather(city, weather) {
-//         // Store response data from our fetch request in variables
+//          Store response data from our fetch request in variables
 //         var today = dayjs().format('M/D/YYYY');
 //         var temp 
 //         var humid
